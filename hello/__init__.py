@@ -7,5 +7,5 @@ def exists():
 
 @check50.check(exists)
 def testhello():
-    """output of hello"""
-    check50.run("python3 heelo.py").stdout("hello").exit()
+    """output of hello, world"""
+    check50.run("python3 hello.py").stdout("hello, world").exit()
