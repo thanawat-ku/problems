@@ -13,7 +13,7 @@ def testhello():
 
 @check50.check(exists)
 def testcs50():
-    """input of This is cpe113 yields output of this is cs50"""
+    """input of This is cpe113 yields output of This is cs50"""
     check50.run("python3 input.py").stdin("This is cpe113", prompt=False).stdout("This is cpe113").exit()
 
 @check50.check(exists)
