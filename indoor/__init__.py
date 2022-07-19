@@ -12,9 +12,9 @@ def testhello():
     check50.run("python3 indoor.py").stdin("HELLO", prompt=False).stdout("hello").exit()
 
 @check50.check(exists)
-def testcs50():
-    """input of THIS IS CS50 yields output of this is cs50"""
-    check50.run("python3 indoor.py").stdin("THIS IS CS50", prompt=False).stdout("this is cs50").exit()
+def testcpe113():
+    """input of THIS IS CPE113 yields output of this is cpe113"""
+    check50.run("python3 indoor.py").stdin("THIS IS CPE113", prompt=False).stdout("this is cpe113").exit()
 
 @check50.check(exists)
 def testnumber():
