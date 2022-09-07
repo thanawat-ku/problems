@@ -10,7 +10,7 @@ def test_42():
     """input of 42 yields output of Yes"""
     input = "42"
     output = "Yes"
-    check50.run("python3 deep.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
+    check50.run("python3 censor.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 @check50.check(exists)
 def testBitch():
