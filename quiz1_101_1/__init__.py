@@ -26,7 +26,7 @@ def testShit():
     output = check50.run("python3 censor.py").stdin("Holy shit", prompt=True).stdout("Censor sentence: Holy s**t").exit()
 
 @check50.check(exists)
-def testShit():
+def testFuck():
     """input of \"I fucking hate you\" yields output of \"Censor sentence: I f**king hate you\""""
     output = check50.run("python3 censor.py").stdin("I fucking hate you", prompt=True).stdout("Censor sentence: I f**king hate you").exit()
 
