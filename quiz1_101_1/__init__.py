@@ -28,7 +28,7 @@ def testShit():
 @check50.check(exists)
 def testFuck():
     """input of \"I fucking hate you\" yields output of \"Censor sentence: I f**king hate you\""""
-   check50.run("python3 censor.py").stdin("I fucking hate you", prompt=True).stdout("Censor sentence: I f**king hate you").exit()
+    check50.run("python3 censor.py").stdin("I fucking hate you", prompt=True).stdout("Censor sentence: I f**king hate you").exit()
 
 @check50.check(exists)
 def testMultiple():
