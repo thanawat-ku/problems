@@ -14,13 +14,13 @@ def test_42():
 
 @check50.check(exists)
 def testBitch():
-    """input of \"Hey, stop your bitching\" yields output of \"Censor sentence: Hey, stop your b***hing\""""
-    check50.run("python3 censor.py").stdin("Hey, stop your bitching", prompt=True).stdout(regex("Censor sentence: Hey, stop your b***hing"), "Censor sentence: Hey, stop your b***hing", regex=True).exit()
+    """input of \"Hey, stop your bitching\" yields output of \"Censor sentence: Hey, stop your b...hing\""""
+    check50.run("python3 censor.py").stdin("Hey, stop your bitching", prompt=True).stdout(regex("Censor sentence: Hey, stop your b***hing"), "Censor sentence: Hey, stop your b...hing", regex=True).exit()
 
 @check50.check(exists)
 def testDamn():
     """input of \"Damn you\" yields output of \"Censor sentence: D**n you\""""
-    check50.run("python3 censor.py").stdin("Damn you", prompt=True).stdout(regex("Censor sentence: D**n you"), "Censor sentence: D**n you", regex=True).exit()
+    check50.run("python3 censor.py").stdin("Damn you", prompt=True).stdout(regex("Censor sentence: D\*\*n you"), "Censor sentence: D\*\*n you", regex=True).exit()
 
 @check50.check(exists)
 def testAsshole():
