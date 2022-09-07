@@ -34,3 +34,7 @@ def testFuck():
 def testMultiple():
     """input of \"Damn, you're shit out of luck!\" yields output of \"D**n, you're s**t out of luck!\""""
     check50.run("python3 censor.py").stdin("Damn, you're shit out of luck!", prompt=True).stdout(regex("Censor sentence: Damn, you're shit out of luck!"), "Censor sentence: Damn, you're shit out of luck!", regex=True).exit()
+
+def regex(answer):
+    """match case-insensitively with only whitespace on either side"""
+    return rf'(?i)^\s*{answer}\s*$'
