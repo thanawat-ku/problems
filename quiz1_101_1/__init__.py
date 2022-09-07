@@ -6,6 +6,13 @@ def exists():
     check50.exists("censor.py")
 
 @check50.check(exists)
+def test_42():
+    """input of 42 yields output of Yes"""
+    input = "42"
+    output = "Yes"
+    check50.run("python3 deep.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
+
+@check50.check(exists)
 def testBitch():
     """input of \"Hey, stop your bitching\" yields output of \"Censor sentence: Hey, stop your b***hing\""""
     check50.run("python3 censor.py").stdin("Hey, stop your bitching", prompt=True).stdout(regex("Censor sentence: Hey, stop your b***hing"), "Censor sentence: Hey, stop your b***hing", regex=True).exit()
