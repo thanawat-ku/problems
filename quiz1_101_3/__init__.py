@@ -19,7 +19,7 @@ def test_0():
 @check50.check(exists)
 def test_minus10():
     """usage unit = -10"""
-    input = "10"
+    input = "-10"
     check50.run("python3 water.py").stdin(input, prompt=True).stdin(input, prompt=True).stdin(input, prompt=True).kill()
 
 
