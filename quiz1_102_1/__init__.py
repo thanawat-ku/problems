@@ -38,4 +38,4 @@ def testMultiple():
 
 def regex(answer):
     """match case-sensitively with only whitespace on either side"""
-    return rf'(?i)^\s*{answer}\s*$'
+    return fr'^.*{escape(answer)}\s*$'
