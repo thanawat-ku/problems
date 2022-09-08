@@ -1,4 +1,5 @@
 import check50
+from re import escape
 
 @check50.check()
 def exists():
@@ -36,5 +37,5 @@ def testMultiple():
     check50.run("python3 censor.py").stdin("Damn, you're shit out of luck!", prompt=True).stdout(regex("Censor sentence: D\*\*n, you're s\*\*t out of luck!"), "Censor sentence: D\*\*n, you're s\*\*t out of luck!", regex=True).exit()
 
 def regex(answer):
-    """match case-insensitively with only whitespace on either side"""
-    return rf'(?i)^\s*{answer}\s*$'
+    """match case-sensitively with only whitespace on either side"""
+    return fr'^.*{escape(answer)}\s*$'
