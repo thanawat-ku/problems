@@ -11,9 +11,9 @@ def exists():
 @check50.check(exists)
 def test_change():
     """list of student name"""
-    output="List of sorted students\nDraco\nHarry\nHermione\nPadma\nRon"
+    output="List of sorted students\nRon\nPadma\nHermione\nHarry\nDraco"
     check50.run("python3 sort_name.py").stdin("Ron", prompt=True).stdin("Harry", prompt=True).stdin("Hermione", prompt=True).stdin("Draco", prompt=True).stdin("Padma", prompt=True).stdout(regex(output), output, regex=True).exit()
 
 def regex(answer):
-    """match case-insensitively with only whitespace on either side"""
-    return rf'(?i)^\s*{answer}\s*$'
+    """match case-sensitively with only whitespace on either side"""
+    return rf'^\s*{answer}\s*$'

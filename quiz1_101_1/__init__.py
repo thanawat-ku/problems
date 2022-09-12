@@ -7,34 +7,34 @@ def exists():
 
 @check50.check(exists)
 def testBitch():
-    """input of \"Hey, stop your bitching\" yields output of \"Censor sentence: Hey, stop your b***hing\""""
-    check50.run("python3 censor.py").stdin("Hey, stop your bitching", prompt=True).stdout(regex("Censor sentence: Hey, stop your b\*\*\*hing"), "Censor sentence: Hey, stop your b\*\*\*.hing", regex=True).exit()
+    """input of \"Go to hell\" yields output of \"Censor sentence: Go to h**l\""""
+    check50.run("python3 censor.py").stdin("Go to hell", prompt=True).stdout(regex("Censor sentence: Go to h\*\*l"), "Censor sentence: Go to h\*\*l", regex=True).exit()
 
 @check50.check(exists)
 def testDamn():
-    """input of \"Damn you\" yields output of \"Censor sentence: D**n you\""""
-    check50.run("python3 censor.py").stdin("Damn you", prompt=True).stdout(regex("Censor sentence: D\*\*n you"), "Censor sentence: D\*\*n you", regex=True).exit()
+    """input of \"He was pissed last night\" yields output of \"Censor sentence: He was p**sed last night\""""
+    check50.run("python3 censor.py").stdin("He was pissed last night", prompt=True).stdout(regex("Censor sentence: He was p\*\*sed last night"), "Censor sentence: He was p\*\*sed last night", regex=True).exit()
 
 @check50.check(exists)
 def testAsshole():
-    """input of \"What an asshole\" yields output of \"Censor sentence: What an a*****e\""""
-    check50.run("python3 censor.py").stdin("What an asshole", prompt=True).stdout(regex("Censor sentence: What an a\*\*\*\*\*e"), "Censor sentence: What an a\*\*\*\*\*e", regex=True).exit()
+    """input of \"What a cock block\" yields output of \"Censor sentence: What a c**k block\""""
+    check50.run("python3 censor.py").stdin("What a cock block", prompt=True).stdout(regex("Censor sentence: What a c\*\*k block"), "Censor sentence: What a c\*\*k block", regex=True).exit()
 
 @check50.check(exists)
 def testShit():
-    """input of \"Holy shit\" yields output of \"Censor sentence: Holy s**t\""""
-    check50.run("python3 censor.py").stdin("Holy shit", prompt=True).stdout(regex("Censor sentence: Holy s\*\*t"), "Censor sentence: Holy s\*\*t", regex=True).exit()
+    """input of \"Yeah…he's a moron!\" yields output of \"Censor sentence: Yeah…he's a m***n!\""""
+    check50.run("python3 censor.py").stdin("Yeah…he's a moron!", prompt=True).stdout(regex("Censor sentence: Yeah…he's a m\*\*\*n!"), "Censor sentence: Yeah…he's a m\*\*\*n!", regex=True).exit()
 
 @check50.check(exists)
 def testFuck():
-    """input of \"I fucking hate you\" yields output of \"Censor sentence: I f**king hate you\""""
-    check50.run("python3 censor.py").stdin("I fucking hate you", prompt=True).stdout(regex("Censor sentence: I f\*\*king hate you"), "Censor sentence: I f\*\*king hate you", regex=True).exit()
+    """input of \"He screamed like a girl when he saw that snake. What a pussy\" yields output of \"Censor sentence: He screamed like a girl when he saw that snake. What a p***y\""""
+    check50.run("python3 censor.py").stdin("He screamed like a girl when he saw that snake. What a pussy", prompt=True).stdout(regex("Censor sentence: He screamed like a girl when he saw that snake. What a p\*\*\*y"), "Censor sentence: He screamed like a girl when he saw that snake. What a p\*\*\*y", regex=True).exit()
 
 @check50.check(exists)
 def testMultiple():
-    """input of \"Damn, you're shit out of luck!\" yields output of \"D**n, you're s**t out of luck!\""""
-    check50.run("python3 censor.py").stdin("Damn, you're shit out of luck!", prompt=True).stdout(regex("Censor sentence: D\*\*n, you're s\*\*t out of luck!"), "Censor sentence: D\*\*n, you're s\*\*t out of luck!", regex=True).exit()
+    """input of \"To hell with it! What a cock block!\" yields output of \"To h**l with it! What a c**k block!\""""
+    check50.run("python3 censor.py").stdin("To hell with it! What a cock block!", prompt=True).stdout(regex("Censor sentence: To h\*\*l with it! What a c\*\*k block!"), "Censor sentence: To h\*\*l with it! What a c\*\*k block!", regex=True).exit()
 
 def regex(answer):
-    """match case-insensitively with only whitespace on either side"""
-    return rf'(?i)^\s*{answer}\s*$'
+    """match case-sensitively with only whitespace on either side"""
+    return rf'^\s*{answer}\s*$'
