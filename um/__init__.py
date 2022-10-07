@@ -56,35 +56,6 @@ def test_part_of_word():
 
 
 """
-test_um.py checks
-"""
-
-
-@check50.check(exists)
-def test_correct():
-    """correct um.py passes all test_um.py checks"""
-    test_implementation("um.py", "correct_test.pyc", "test_um.py", code=0)
-
-
-@check50.check(test_correct)
-def test_part_of_words():
-    """test_um.py catches um.py matching \"um\" in words"""
-    test_implementation("um.py", "part_of_words_test.pyc", "test_um.py", code=1)
-
-
-@check50.check(test_correct)
-def test_only_spaces():
-    """test_um.py catches um.py with regular expression requiring spaces around \"um\""""
-    test_implementation("um.py", "only_spaces_test.pyc", "test_um.py", code=1)
-
-
-@check50.check(test_correct)
-def test_case_insensitive():
-    """test_um.py catches um.py without case-insensitive matching of \"um\""""
-    test_implementation("um.py", "case_insensitive_test.pyc", "test_um.py", code=1)
-
-
-"""
 Helpers
 """
 
