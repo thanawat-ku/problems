@@ -25,4 +25,4 @@ def test_bangkok():
 
 def regex(answer):
     """match case-insensitively with only whitespace on either side"""
-    return rf'(?i)^\s*{answer}\s*$'
+    return rf'(?i)^{answer}.*'
