@@ -3,6 +3,7 @@ submit50:
     - !exclude "*"
     - !include "*.py"
     - !require score.py
+    - !require score.csv
   style: false
   
 check50:
