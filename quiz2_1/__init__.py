@@ -12,7 +12,7 @@ def exists():
 def test_sakon():
     """weather of sakon"""
     input = "sakon nakhon"
-    output = "lat = 17.3333"
+    output = "lat = 17.3333, lon = 103.8333"
     check50.run("python3 weather.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 
