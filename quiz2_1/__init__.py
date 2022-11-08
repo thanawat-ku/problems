@@ -19,8 +19,9 @@ def test_sakon():
 @check50.check(exists)
 def test_bangkok():
     """weather of bangkok"""
-    input = "lat = 13.75, lon = 100.5197"
-    check50.run("python3 weather.py").stdin(input, prompt=True).stdin(input, prompt=True).stdin(input, prompt=True).kill()
+    input = "bangkok"
+    output = "lat = 13.7500, lon = 100.5197"
+    check50.run("python3 weather.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit()
 
 
 def regex(answer):
