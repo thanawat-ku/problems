@@ -72,27 +72,6 @@ def test_non_ip():
     check50.run("python3 testing.py").stdin(input, prompt=True).stdout(regex(output), output, regex=True).exit(0)
 
 
-"""
-test_numb3rs.py checks
-"""
-
-@check50.check(exists)
-def test_correct():
-    """correct numb3rs.py passes all test_numb3rs.py checks"""
-    test_implementation("numb3rs.py", "correct_test.pyc", "test_numb3rs.py", code=0)
-
-
-@check50.check(test_correct)
-def test_first_byte():
-    """test_numb3rs.py catches numb3rs.py only checking first byte of IPv4 address"""
-    test_implementation("numb3rs.py", "first_byte_test.pyc", "test_numb3rs.py", code=1)
-
-
-@check50.check(test_correct)
-def test_invalid_format():
-    """test_numb3rs.py catches numb3rs.py failing to return False for invalid IPv4 format"""
-    test_implementation("numb3rs.py", "invalid_format_test.pyc", "test_numb3rs.py", code=1)
-
 
 """
 Helpers
@@ -101,25 +80,3 @@ Helpers
 def regex(text):
     """match case-insensitively, allowing for only whitespace on either side"""
     return fr'^(?i)\s*{escape(text)}\s*$'
-
-
-def test_implementation(base_filename, implementation_filename, test_filename, code=0):
-    """Test implementation_file, an implementation of base_file, against student's checks in test_file. Expect a given exit status"""
-
-    check50.include("pytest_helper.py")
-    check50.include(implementation_filename)
-
-    # Overwrite base_file with code to run implementation_file
-    with open(base_filename, "w") as base_file, open("pytest_helper.py", "r") as pytest_helper:
-
-        # Read text from pytest_helper
-        pytest_helper_text = pytest_helper.read()
-
-        # Replace open statement with implementation_file
-        pytest_helper_text = sub("with open\(\".*\", \"rb\"\) as test_file:", f"with open(\"{implementation_filename}\", \"rb\") as test_file:", pytest_helper_text)
-
-        # Write helper file text to base_file
-        base_file.writelines(pytest_helper_text)
-
-    # Expect that pytest will exit with given status code
-    return check50.run(f"pytest {test_filename}").exit(code=code)
