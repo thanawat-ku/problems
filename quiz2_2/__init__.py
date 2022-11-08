@@ -17,12 +17,3 @@ def test_sakon():
     .stdin("C", prompt=True).stdin("10", prompt=True).stdin("10", prompt=True).stdin("10", prompt=True) \
     .stdin("", prompt=True).stdin("0", prompt=True).stdin("0", prompt=True).stdin("0", prompt=True) \
     .exit()
-
-@check50.check()
-def test_csv():
-    """score.csv exists"""
-    check50.exists("score.csv")
-
-def regex(answer):
-    """match case-insensitively with only whitespace on either side"""
-    return rf'^{answer}.*'
